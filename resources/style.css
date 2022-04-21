@@ -1,0 +1,63 @@
+* {
+  margin: *;
+  padding: *;
+}
+
+/* HEADER AND NAVIGATION */
+
+nav {
+  height: 200px;
+  width: 100%;
+  border: 2px solid black;
+  margin-bottom: 20px;
+  background-color: black;
+}
+
+
+/* TABLE CONTENT  */
+
+table, th, td {
+  border:1px solid black;
+  text-align: center;
+}
+
+th {
+  font-size: 22px;
+}
+
+td {
+  font-size: 19px;
+}
+
+table {
+  margin: auto;
+}
+
+form > .letter {
+  color: black;
+}
+
+.form {
+  border: 1px solid black;
+  height: 350px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.form * {
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding: 3px;
+  color: white;
+}
+
+
+form > #submit, #delete {
+  margin-top: 10px;
+  color: white;
+  background-color: black;
+}

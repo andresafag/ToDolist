@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To do list</title>
+</head>
+  <link rel="stylesheet" href="./resources/style.css">
+<body>
+  <header>
+    <nav>
+    </nav>
+  </header>
+  <section>
+    <div class="form">
+      <form action="/" method="POST">
+        <label for="activity">Enter activity</label>
+        <input id="activity-value" class="letter" type="text" name="activity" value="" required>
+        <label for="time">Enter Time you spend on the activity</label>
+        <input id="time-value" type="text" class="letter" name="time" value="" required>
+        <label for="benefit">Enter benefits</label>
+        <textarea id="benefit-value" class="letter" name="no" id="benefits" rows="6" cols="30" required></textarea>
+        <label for="goal">Enter Goal</label>
+        <input id="goal-value" class="letter" type="text" name="goal" value="" required>
+        <input type="submit" name="submit" value="Upload" id="submit">
+        <input type="button" name="delete" value="Delete row" id="delete">
+      </form>
+    </div>
+    <div>
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Time spent</th>
+            <th>Benefits</th>
+            <th>goal</th>
+          </tr>
+        </thead>
+        <tbody id="table-it">
+          <tr>
+            <td>Coding</td>
+            <td>10</td>
+            <td>intelligence, innovation, automatization for lazyness</td>
+            <td>Becoming a developer</td>
+          </tr>
+          <tr>
+            <td>Reading languages</td>
+            <td>2</td>
+            <td>Chance to live abroad and involve in differents environmnts</td>
+            <td>Migrate</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+<script type="text/javascript">
+  const table = document.querySelector('#table-it')
+  const activity = document.querySelector('#activity-value');
+  const time = document.querySelector('#time-value');
+  const benefit = document.querySelector('#benefit-value');
+  const goal = document.querySelector('#goal-value');
+  const submit = document.querySelector('#submit');
+  const deletearow = document.querySelector('#delete');
+  submit.addEventListener('click', addValues)
+  deletearow.addEventListener('click', deleteARow)
+  function addValues(e){
+    e.preventDefault()
+    if(activity.value.length == 0 || time.value.length == 0 || benefit.value.length == 0 || goal.value.length == 0 ){
+      alert("You must complete all fields bofore moving forward")
+    } else {
+      let row = table.insertRow(table.rows.length)
+      let celula1 = row.insertCell(0)
+      let celula2 = row.insertCell(1)
+      let celula3 = row.insertCell(2)
+      let celula4 = row.insertCell(3)
+      celula1.textContent = activity.value
+      celula2.textContent = time.value
+      celula3.textContent = benefit.value
+      celula4.textContent = goal.value
+    }
+
+  }
+
+  function deleteARow(e){
+    table.deleteRow(table.rows.length - 1)
+  }
+
+</script>
+</body>
+
+</html>
